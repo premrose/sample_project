@@ -1,0 +1,99 @@
+<div class="container-fluid">
+
+  <div class="row flex-wrap">
+
+    <!-- side navigation bar -->
+    <div class="col-sm-2 px-0 vh-100 collapse" id="sidebar">
+      <h5 class="bolder ps-3 py-3 text-white">ACME</h5>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="#" class="nav-link d-flex align-items-start text-white"><span class="material-symbols-rounded side-icon mx-2 text-white-50">home</span>Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link d-flex align-items-start text-white"><span class="material-symbols-rounded side-icon mx-2 text-white-50">analytics</span>Dashboad</a></li>
+        <li class="nav-item d-flex justify-content-between">
+          <a href="#" class="nav-link d-flex align-items-start text-white"><span class="material-symbols-rounded side-icon mx-2 text-white-50">archive</span>Inbox</a>
+          <small class="my-auto badge-size"><span class="badge rounded-pill bg-danger me-4">New</span></small>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link d-flex align-items-start text-white"><span class="material-symbols-rounded side-icon mx-2 text-white-50">ballot</span>Products</a></li>
+        <li class="nav-item"><a href="#" class="nav-link d-flex align-items-start text-white"><span class="material-symbols-rounded side-icon mx-2 text-white-50">settings</span>Admin</a></li>
+      </ul>
+    </div>
+
+    <!-- top navigation bar  -->
+    <div class="col-sm gx-0">
+      <nav class="navbar navbar-light bg-light sticky-top px-3 shadow-sm ">
+
+        <span class="material-symbols-rounded side-nav text-black-50" type="button" data-bs-target="#sidebar" data-bs-toggle="collapse" aria-expanded="false">segment</span>
+        <a href="#" class="d-flex ms-auto ms-sm-1 me-sm-auto text-decoration-none text-black-50">
+          <span class="material-symbols-rounded ms-sm-2 me-2">search</span>
+          <small class="d-none d-md-block">Search transactions, invoices or help</small>
+        </a>
+
+        <ul class="nav">
+
+          <!-- notifications dropdown  -->
+
+          <li class="dropdown notifications">
+            <a href="#" class="nav-link" id="navbardropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <em class="fa fa-bell-o text-black-50 me-2" (click)="onClick()" aria-hidden="true">
+                <span class="position-absolute bg-success rounded-circle" [ngClass]=" isdot ? 'dot' : 'nodot' "></span>
+              </em>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-notification shadow border-0" aria-labelledby="navbardropdown">
+              <li class="dropdown-item" *ngFor="let item of notifications; let i = index"> <!-- fetching arrary list from ts component -->
+                <div class="row px-1 pt-2 my-auto" *ngFor="let items of item.notification">
+                  <div class="col-2 gx-1 ge-sm-0">
+                    <img src="{{ items.image }}" class="img-notification rounded-circle" alt="thumbnail">
+                  </div>
+                  <div class="col-10 gx-3 ps-sm-0">
+                    <div class="d-flex justify-content-between">
+                        <h6>{{ items.author }}</h6>
+                        <small class="text-black-50">{{ items.time }}</small>
+                    </div>
+                    <div class="d-flex justify-content-start">
+                      <p class="small text-black-50">{{ items.note }}</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center" *ngIf="i >= 2">
+                    <a href="" class="small text-primary show-more my-3">show more</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <!-- dropdown menu -->
+
+          <li class="dropdown">
+            <div class="d-flex flex-row mt-1" id="navbardropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <small class="d-none d-sm-block my-auto text-black-50">John Doe</small> <!-- will be hidden on small screen -->
+              <span class="material-symbols-rounded d-none d-sm-block my-auto mt-1 bg-light text-black-50">expand_more</span> <!-- will be hidden on small screen -->
+              <img src="assets/images/pp-01.jpg" class="img-navbar-profile rounded-circle mx-2" alt="thumbnail">
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-profile border-0 shadow" aria-labelledby="navbardropdown">
+              <li class="dropdown-item d-flex mt-2">
+                <span class="material-symbols-rounded text-black-50">person</span>
+                <p class="d-flex ms-2 text-black-50">My Profile</p>
+              </li>
+              <li class="dropdown-item d-flex my-1 text-black-50">
+                <span class="material-symbols-rounded">receipt</span>
+                <p class="d-flex ms-2">Billing</p>
+              </li>
+              <li class="dropdown-item d-flex text-black-50 mb-0">
+                <span class="material-symbols-rounded">logout</span>
+                <p class="d-flex ms-2">Logout</p>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!-- main content from main component -->
+
+      <app-main></app-main>
+
+    </div>
+
+  </div>
+</div>
+

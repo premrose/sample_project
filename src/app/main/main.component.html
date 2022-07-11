@@ -1,0 +1,183 @@
+<div class="container-fluid">
+
+  <div class="d-flex flex-row mx-3 mx-sm-4 justify-content-between align-items-center">
+    <h5 class="my-3">Overview</h5>
+    <button class="btn btn-purple text-white my-3">Add Funds
+      <span class="ms-4 add">+</span>
+    </button>
+  </div>
+
+  <div class="row d-flex justify-content-around mx-sm-3">
+
+    <div class="col-md-4 col-graph my-2 my-sm-0">
+      <div class="card">
+        <div class="d-flex flex-column mx-3 mt-3">
+          <div class="d-flex flex-row justify-content-between">
+            <h6>Referrer</h6>
+            <small class="text-black-50 mt-1">Last 6 months
+              <span class="material-symbols-rounded text-black-50 expand">expand_more</span>
+            </small>
+          </div>
+          <div class="card-body mt-0">
+            <img src="assets/images/mitsogo_chart_01.PNG" class="img-fluid" alt="thumbnail">
+            <div class="row mt-2">
+              <div class="col-1 col-sm-1"></div>
+              <div class="col-5 col-sm-5">
+                <div class="d-flex flex-row align-items-center">
+                  <i class="fa fa-circle chart-01" aria-hidden="true"></i>
+                  <small class="text-black-50 ms-2">Product Sold</small>
+                </div>
+              </div>
+              <div class="col-5 col-sm-4">
+                <div class="d-flex flex-row align-items-center">
+                  <i class="fa fa-circle chart-11" aria-hidden="true"></i>
+                  <small class="text-black-50 ms-2">Total Views</small>
+                </div>
+              </div>
+              <div class="col-sm-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-graph my-2 my-sm-0">
+      <div class="card">
+        <div class="d-flex flex-column mx-3 mt-3">
+          <h6>Sales Distribution</h6>
+          <div class="card-body">
+            <img src="assets/images/mitsogo_chart_02.PNG" class="img-fluid" alt="thumbnail">
+            <div class="row mt-1 sales">
+              <div class="col-sm-2"></div>
+              <div class="col-6 col-sm-5">
+                <div class="d-flex flex-row align-items-center">
+                  <i class="fa fa-circle chart-01" aria-hidden="true"></i>
+                  <small class="ms-2">France</small>
+                  <small class="text-black-50 sale">4260 sales</small>
+                </div>
+              </div>
+              <div class="col-6 col-sm-5">
+                <div class="d-flex flex-row align-items-center">
+                  <i class="fa fa-circle chart-11" aria-hidden="true"></i>
+                  <small class="ms-2">Italy</small>
+                  <small class="text-black-50 sale">3970 sales</small>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-1">
+              <div class="col-sm-1"></div>
+              <div class="col-6 col-sm-5">
+                <div class="d-flex flex-row align-items-center">
+                  <i class="fa fa-circle chart-01" aria-hidden="true"></i>
+                  <small class="ms-2">Japan</small>
+                  <small class="text-black-50 sale">4260 sales</small>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6">
+                <div class="d-flex flex-row align-items-center">
+                  <i class="fa fa-circle chart-11" aria-hidden="true"></i>
+                  <small class="ms-2">Canada</small>
+                  <small class="text-black-50 sale">4260 sales</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 order-first order-sm-last mx-auto mb-2">
+      <div class="card user-card">
+        <img src="assets/images/pp-01.jpg" class="card-img-top img-fluid rounded-circle mx-auto mt-5" alt="thumbnail">
+         <i class="fa fa-pencil position-absolute badge-edit border border-3 border-light text-white" aria-hidden="true"></i>
+
+        <div class="card-body mb-2">
+          <h6 class="card-title  text-center">Nick Herasimenka</h6>
+          <p class="card-text text-black-50 text-center">United States</p>
+          <div class="d-flex flex-row justify-content-center social-icons">
+            <i class="fa fa-twitter mx-2 text text-black-50" aria-hidden="true"></i>
+            <i class="fa fa-facebook-square mx-2 text-black-50" aria-hidden="true"></i>
+            <i class="fa fa-linkedin-square mx-2 text-black-50" aria-hidden="true"></i>
+            <i class="fa fa-whatsapp mx-2 text-black-50" aria-hidden="true"></i>
+          </div>
+          <hr class="text-black-50">
+
+          <div class="d-flex flex-row justify-content-between mx-2 py-2">
+            <h6>Our Users</h6>
+            <i class="fa fa-ellipsis-v text-black-50" aria-hidden="true"></i>
+          </div>
+
+          <div class="mx-3 mt-2">
+            <div class="row ps-1 pt-2 my-auto" *ngFor="let items of user_profiles">
+              <div class="col-2 gx-0 gx-sm-0">
+                <img src="{{ items.image }}" class="img-users rounded-circle" alt="thumbnail">
+              </div>
+              <div class="col-10 ps-3 ps-sm-0 my-auto">
+                <div class="d-flex justify-content-start">
+                  <h6>{{ items.author }}</h6>
+                </div>
+                <div class="d-flex justify-content-between align-items-start">
+                  <p class="small text-black-50">{{ items.location }}</p>
+                  <small class="text-black-50">{{ items.mobile }}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- row-2 -->
+
+  <div class="row d-flex justify-content-around mx-sm-3 my-2 mb-sm-4 my-sm-0">
+    <div class="col-sm-8 row-2 mx-auto">
+      <div class="card row-22">
+        <div class="d-flex flex-column m-4">
+          <h6 class="mt-2 mb-3">Referrer</h6>
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <tbody>
+                <tr class="table-light">
+                  <th scope="row" class="text-black-50">Location</th>
+                  <th scope="row" class="text-black-50">Views</th>
+                  <th scope="row" class="text-black-50">Sales</th>
+                  <th scope="row" class="text-black-50">Conversion</th>
+                  <th scope="row" class="text-black-50">Total</th>
+                </tr>
+                <tr *ngFor="let item of table_reference">
+                  <td>{{ item.c1 }}</td>
+                  <td>{{ item.c2 }}</td>
+                  <td>{{ item.c3 }}</td>
+                  <td>{{ item.c4 }}</td>
+                  <td>{{ item.c5 }}</td>
+                </tr>
+                <tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="d-flex justify-content-start">
+            <a href="" class="small text-primary show-more">show more</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-sm-4 mt-2 col-graph my-2 my-sm-0">
+      <div class="card">
+        <div class="d-flex flex-column m-4">
+          <div class="d-flex flex-row justify-content-between">
+            <h6 class="mb-3 align-self-start bold">Product Video</h6>
+            <i class="fa fa-ellipsis-v align-self-start" aria-hidden="true"></i>
+          </div>
+          <video src="https://youtu.be/Oy6hk6Y7VHQ" poster="assets/images/video_thumbnail.png"
+            loading="lazy" autopictureinpicture="true" preload="none"></video>
+          <div class="play">
+            <i class="fa fa-play text-black-50" aria-hidden="true"></i>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</div>
